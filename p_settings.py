@@ -14,3 +14,16 @@ def get(setting):
     
   if setting == "files":
     return config.get("files","files")
+
+  def set(setting,val):
+    config = ConfigParser()
+    config.read("settings.ini")
+    
+   if setting == "user":
+     return config.get("account","user",val)
+      
+   if setting == "pass":
+     return config.get("account","pass",val)
+    
+   if setting == "files":
+     return config.get("files","files",val)
